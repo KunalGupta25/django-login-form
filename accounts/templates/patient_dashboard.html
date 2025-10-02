@@ -1,0 +1,8 @@
+<h2>Patient Dashboard</h2>
+<p>First name: {{ user.first_name }}</p>
+<p>Last name: {{ user.last_name }}</p>
+{% if user.profile_pic %}<img src="{{ user.profile_pic.url }}" width="100">{% endif %}
+<p>Username: {{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }}, {{ user.pincode }}</p>
+<p>User Type: {{ user.user_type }}</p>
