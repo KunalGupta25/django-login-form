@@ -1,0 +1,13 @@
+<h2>My Blog Posts</h2>
+{% for blog in blogs %}
+  <div>
+    <h3>{{ blog.title }}</h3>
+    <p>Category: {{ blog.category }}</p>
+    {% if blog.image %}<img src="{{ blog.image.url }}" width="100">{% endif %}
+    <p>Draft: {{ blog.is_draft }}</p>
+    <p>{{ blog.summary }}</p>
+    <form action="{% url 'blog_detail' blog.pk %}" method="get">
+      <button type="submit">View Blog</button>
+    </form>
+  </div>
+{% endfor %}

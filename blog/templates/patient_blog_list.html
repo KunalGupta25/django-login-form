@@ -1,0 +1,16 @@
+<h2>Blog Posts by Category</h2>
+{% for cat, blogs in blogs_by_category.items %}
+  <h3>{{ cat }}</h3>
+  {% for blog in blogs %}
+    <div>
+      <h4>{{ blog.title }}</h4>
+      {% if blog.image %}<img src="{{ blog.image.url }}" width="100">{% endif %}
+      <p>{{ blog.summary|truncate_words:15 }}</p>
+      <form action="{% url 'blog_detail' blog.pk %}" method="get">
+        <button type="submit">View Blog</button>
+      </form>
+    </div>
+  {% empty %}
+    <p>No posts in this category.</p>
+  {% endfor %}
+{% endfor %}

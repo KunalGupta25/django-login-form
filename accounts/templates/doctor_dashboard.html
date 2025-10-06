@@ -6,3 +6,6 @@
 <p>Email: {{ user.email }}</p>
 <p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }}, {{ user.pincode }}</p>
 <p>User Type: {{ user.user_type }}</p>
+<button onclick="location.href='{% url 'doctor_blog_list' %}'">Blogs</button>
+<button onclick="location.href='{% url 'doctor_blog_create' %}'">Blogs</button>
+<button onclick="location.href='{% url 'login' %}'">logout</button>
