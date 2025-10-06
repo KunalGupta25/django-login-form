@@ -1,3 +1,5 @@
+{% load summary_filters %}
+
 <h2>Blog Posts by Category</h2>
 {% for cat, blogs in blogs_by_category.items %}
   <h3>{{ cat }}</h3>
